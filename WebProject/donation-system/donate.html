@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Difference - CareHaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/donate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">CareHaven</h1>
+            <div class="nav-links">
+                <a href="#" id="dashboardLink" class="nav-link">Dashboard</a>
+                <a href="campaigns.html" class="nav-link">Causes</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="donation-container">
+            <div class="donation-header">
+                <h2>Spread Hope with CareHaven</h2>
+                <p>Your contribution creates ripples of positive change</p>
+            </div>
+
+            <div class="donation-content">
+                <div class="campaign-summary">
+                    <h3 id="campaignTitle"></h3>
+                    <p id="campaignDescription"></p>
+                    <div class="campaign-details">
+                        <p><strong>Charity Partner:</strong> <span id="campaignNgo"></span></p>
+                        <p><strong>Funding Goal:</strong> $<span id="campaignTarget"></span></p>
+                        <p><strong>Already Raised:</strong> $<span id="campaignRaised"></span></p>
+                    </div>
+                </div>
+
+                <div class="donation-form-container">
+                    <form id="donationForm" class="donation-form">
+                        <div class="form-section">
+                            <h4>Choose Your Impact Level</h4>
+                            <div class="amount-options">
+                                <button type="button" class="amount-option" data-amount="50">$50</button>
+                                <button type="button" class="amount-option" data-amount="100">$100</button>
+                                <button type="button" class="amount-option" data-amount="200">$200</button>
+                                <button type="button" class="amount-option" data-amount="500">$500</button>
+                                <button type="button" class="amount-option" data-amount="1000">$1000</button>
+                                <div class="custom-amount">
+                                    <input type="number" id="customAmount" min="1" step="1" placeholder="Custom amount">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Personalize Your Support</h4>
+                            <div class="form-group">
+                                <label for="donationMessage">Message of Hope (optional)</label>
+                                <textarea id="donationMessage" rows="3" placeholder="Share an encouraging message with the beneficiaries..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="anonymousDonation">
+                                    <span class="checkmark"></span>
+                                    Support anonymously through CareHaven
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Secure Payment Method</h4>
+                            <div class="payment-methods">
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="creditCard" checked>
+                                    <span class="payment-label">Credit/Debit Card</span>
+                                </label>
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="paypal">
+                                    <span class="payment-label">PayPal</span>
+                                </label>
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="bankTransfer">
+                                    <span class="payment-label">Bank Transfer</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="donation-summary">
+                            <h4>Your CareHaven Impact</h4>
+                            <div class="summary-item">
+                                <span>Donation Amount:</span>
+                                <span id="summaryAmount">$0</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total Contribution:</span>
+                                <span id="totalAmount">$0</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full btn-large">Complete Your CareHaven Donation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Thank You for Choosing CareHaven!</h3>
+            <p>Your donation has been successfully processed. You're now part of our compassionate community making real change.</p>
+            <div class="modal-actions">
+                <button onclick="goToDashboard()" class="btn btn-primary">Return to CareHaven</button>
+                <button onclick="viewReceipt()" class="btn btn-secondary">View Impact Receipt</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/donate.js"></script>
+</body>
+</html>

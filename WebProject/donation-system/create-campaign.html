@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Campaign - CareHaven</title>
+
+<link rel="stylesheet" href="create-campaign.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar">
+  <button class="back-button" onclick="window.location.href='ngo-dashboard.html'">
+    <!-- Arrow perfectly centered in the circle -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="back-icon">
+      <!-- Circle -->
+      <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="3"/>
+      <!-- Arrow -->
+      <path d="M14 8l-4 4 4 4" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="logo">CareHaven</div>
+  <ul>
+    <li><a href="ngo-dashboard.html">Dashboard</a></li>
+    <li><a class="active">Create Campaign</a></li>
+    <li><a href="upload-reports.html">Reports</a></li>
+    <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+  </ul>
+</nav>
+
+<div id="approvalBanner" hidden></div>
+
+<section class="container">
+    <h1>Create a New Campaign</h1>
+    <p class="subtitle">Fill in the details to launch a new cause on CareHaven.</p>
+
+    <form id="campaignForm">
+
+        <label for="campaignTitle">Campaign Title</label>
+        <input type="text" id="campaignTitle" name="title" required minlength="3" maxlength="120" placeholder="e.g. Emergency Winter Relief for Rural Families">
+
+        <label for="campaignDescription">Description</label>
+        <textarea id="campaignDescription" name="description" required minlength="10" maxlength="4000" placeholder="Describe the purpose, objectives, and impact of this campaign..."></textarea>
+
+        <div class="grid">
+            <div>
+                <label for="targetAmount">Target Amount (USD)</label>
+                <input type="number" id="targetAmount" name="targetAmount" required min="1" step="1" placeholder="e.g. 25000">
+            </div>
+            <div>
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="Emergency">Disaster Relief</option>
+                    <option value="Medical">Healthcare</option>
+                    <option value="Education">Education</option>
+                    <option value="Food">Food Aid</option>
+                    <option value="Shelter">Shelter</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Children">Children</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div>
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div>
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+        </div>
+
+        <label for="campaignImage">Campaign Image URL (optional)</label>
+        <input type="url" id="campaignImage" name="image" placeholder="https://example.org/campaign.jpg">
+
+        <button type="submit" class="submit-btn">Create Campaign</button>
+        <div id="message" class="message" role="alert" aria-live="polite"></div>
+    </form>
+
+</section>
+
+<script src="js/auth.js"></script>
+<script src="create-campaign.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join CareHaven - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">CareHaven</h1>
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Join CareHaven</h2>
+            <p class="auth-subtitle">Become part of our compassionate community</p>
+            
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="userType">I want to</label>
+                    <select id="userType" name="userType" required>
+                        <option value="donor">Donate to Causes</option>
+                        <option value="ngo">Register a Charity</option>
+                    </select>
+                </div>
+
+                <div id="ngoFields" class="conditional-fields" hidden>
+                    <div class="form-group">
+                        <label for="organizationName">Charity Name</label>
+                        <input type="text" id="organizationName" name="organizationName" data-required="true" placeholder="Enter your charity name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Charity Phone</label>
+                        <input type="tel" id="phone" name="phone" data-required="true" placeholder="+201001234567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registrationNumber">Registration Number</label>
+                        <input type="text" id="registrationNumber" name="registrationNumber" data-required="true" placeholder="Official registration number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website (optional)</label>
+                        <input type="url" id="website" name="website" placeholder="https://example.org">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Charity Description (optional)</label>
+                        <textarea id="description" name="description" rows="3" placeholder="Briefly describe your charity's mission"></textarea>
+                    </div>
+                </div>
+
+                <div id="adminFields" class="conditional-fields" hidden>
+                    <div class="form-group">
+                        <label for="adminRegistrationKey">Admin Registration Key</label>
+                        <input type="password" id="adminRegistrationKey" name="adminRegistrationKey" placeholder="Enter admin key from server .env">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Create a secure password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Create CareHaven Account</button>
+            </form>
+
+            <div class="auth-links">
+                <p>Already have an account? <a href="login.html">log in here</a></p>
+            </div>
+
+            <div id="message" class="message" role="alert" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

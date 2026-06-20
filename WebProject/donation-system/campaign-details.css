@@ -1,0 +1,196 @@
+/* ===================== GLOBAL STYLES ===================== */
+body {
+    margin: 0;
+    background: #F4EEE4; /* Cream */
+    font-family: 'Lato', sans-serif;
+    color: #1E3A2F; /* Deep Forest */
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+    background: linear-gradient(90deg, #1E3A2F, #4F7A5B);
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center logo */
+    position: relative;      /* for absolute back button */
+    z-index: 10;
+}
+
+/* Logo */
+.navbar .logo {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+/* Navbar links */
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    position: absolute;
+    right: 35px;
+    font-size: 16px;
+}
+
+.navbar a {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .active {
+    font-weight: 600;
+}
+
+/* ===================== BACK BUTTON ===================== */
+.navbar .back-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    z-index: 15;
+}
+
+/* Arrow + Circle */
+.back-icon {
+    width: 27px;
+    height: 27px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover .back-icon circle {
+    fill: white;
+}
+
+.back-button:hover .back-icon path {
+    stroke: #4F7A5B;
+}
+
+/* ===================== DETAILS SECTION ===================== */
+.details-section {
+    width: 85%;
+    margin: 30px auto;
+}
+
+/* Top Info */
+.top-info h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+    color: #4F7A5B; /* Moss Green */
+}
+
+/* Media Box */
+.media-box img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+/* Stats Box */
+.stats-box {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+}
+
+/* Left Panel */
+.left {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #00000015;
+}
+
+.left .big {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4F7A5B;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #A7C1A0; /* Sage Mist */
+    border-radius: 6px;
+    margin: 20px 0 6px;
+}
+
+.progress-bar div {
+    height: 100%;
+    background: #4F7A5B; /* Moss Green */
+    border-radius: 6px;
+}
+
+/* Upload Button */
+.upload-btn {
+    margin-top: 20px;
+    background: #4F7A5B;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background: #1E3A2F; /* Deep Forest */
+}
+
+/* Right Panel */
+.right h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0;
+}
+
+.right p {
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 16px 20px 20px 70px;
+    }
+
+    .navbar ul {
+        position: static;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-left: 0;
+        margin-top: 12px;
+    }
+
+    .details-section {
+        width: calc(100% - 24px);
+    }
+
+    .stats-box {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}

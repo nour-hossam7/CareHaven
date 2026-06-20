@@ -1,0 +1,16 @@
+{
+  "name": "carehaven",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install": "cd backend && npm install",
+    "dev": "cd backend && npm run dev",
+    "dev:all": "node scripts/start-dev.js",
+    "dev:clean": "taskkill /IM node.exe /F /FI \"MEMUSAGE gt 40000\" 2>nul || echo Cleaning old processes... && cd backend && npm run dev",
+    "start": "cd backend && npm start",
+    "backend:install": "cd backend && npm install",
+    "backend:start": "cd backend && npm run dev",
+    "backend:prod": "cd backend && npm start",
+    "frontend:serve": "python -m http.server 5500 --directory WebProject/donation-system"
+  }
+}

@@ -1,0 +1,237 @@
+.logo {
+    font-family: 'Cinzel Decorative', cursive; 
+    font-size: 25px;                           
+    color: white;              
+}
+
+
+
+
+:root {
+    --deep-forest: #1E3A2F;
+    --moss-green: #4F7A5B;
+    --sage-mist: #A7C1A0;
+    --cream: #F4EEE4;
+    --rich-walnut: #563D2A;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: Lato, system-ui, Arial;
+    background: linear-gradient(180deg, var(--cream), #fff);
+    color: var(--deep-forest);
+    margin: 0
+}
+
+.app {
+    display: flex;
+    min-height: 100vh
+}
+
+.sidebar {
+    width: 220px;
+    background: var(--deep-forest);
+    color: var(--cream);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--cream);
+    text-decoration: none;
+    margin-top: 6px
+}
+
+.sidebar nav a.active {
+    background: rgba(255, 255, 255, 0.06)
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 13px;
+    opacity: 0.9
+}
+
+.main {
+    flex: 1;
+    padding: 20px
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.topbar h1 {
+    font-family: Poppins;
+    margin: 0
+}
+
+.top-actions button {
+    background: var(--moss-green);
+    border: none;
+    color: var(--cream);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-family: Poppins;
+    cursor: pointer
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 6px 18px rgba(30, 58, 47, 0.06)
+}
+
+.card.small {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center
+}
+
+.label {
+    font-size: 15px;
+    color: var(--rich-walnut)
+}
+
+.value {
+    font-size: 28px;
+    font-family: Poppins;
+    margin-top: 6px
+}
+
+.progress-wrap {
+    background: linear-gradient(90deg, var(--sage-mist), #e8efe5);
+    border-radius: 10px;
+    height: 18px; /* keep original height */
+    overflow: hidden;
+    margin-top: 10px; /* move the whole bar lower */
+}
+
+/* Or, if you want more spacing from the elements above */
+.stats .card .progress-wrap {
+    margin-top: 20px; /* increases vertical distance from content above */
+}
+
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--moss-green), var(--deep-forest));
+    color: white;
+    text-align: center;
+    line-height: 18px;
+    font-size: 13px;
+    border-radius: 10px
+}
+
+.recent {
+    margin-top: 24px
+}
+
+.campaign-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px
+}
+
+.campaign-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.campaign-card-content {
+    flex: 1
+}
+
+.empty-state {
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px
+}
+
+.campaign-card .thumb {
+    width: 84px;
+    height: 64px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, var(--sage-mist), #e6f0e5)
+}
+
+.campaign-card h3 {
+    margin: 0;
+    font-family: Poppins
+}
+
+.progress-small {
+    width: 120px;
+    height: 8px;
+    background: #f0f3f0;
+    border-radius: 6px;
+    overflow: hidden
+}
+
+.progress-small .inner {
+    height: 100%;
+    background: var(--moss-green);
+    width: 50%
+}
+
+.campaign-card .cta {
+    margin-left: auto
+}
+
+.campaign-card button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: var(--deep-forest);
+    color: var(--cream);
+    cursor: pointer
+}
+
+.footer {
+    margin-top: 28px;
+    color: #6b6b6b
+}
+
+@media(max-width:800px) {
+    .sidebar {
+        display: none
+    }
+
+    .app {
+        flex-direction: column
+    }
+
+    .main {
+        padding: 12px
+    }
+}

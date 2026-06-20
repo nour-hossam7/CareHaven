@@ -1,0 +1,303 @@
+{
+  "info": {
+    "name": "CareHaven API",
+    "description": "Complete API testing collection for CareHaven backend",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "NGO - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Hope Foundation\",\n  \"email\": \"hope@foundation.org\",\n  \"phone\": \"+923001234567\",\n  \"registrationNumber\": \"NGO-2025-001\",\n  \"description\": \"We help underprivileged communities\",\n  \"website\": \"https://hopefoundation.org\",\n  \"documents\": []\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "register"]
+        }
+      }
+    },
+    {
+      "name": "NGO - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/all?status=Approved&page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "all"],
+          "query": [
+            {
+              "key": "status",
+              "value": "Approved"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "NGO - Get By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/NGO_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "NGO_ID"]
+        }
+      }
+    },
+    {
+      "name": "NGO - Admin Get Pending",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/admin/pending?page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "admin", "pending"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "NGO - Admin Approve",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"adminId\": \"ADMIN_ID_HERE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/admin/approve/NGO_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "admin", "approve", "NGO_ID"]
+        }
+      }
+    },
+    {
+      "name": "NGO - Admin Reject",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"adminId\": \"ADMIN_ID_HERE\",\n  \"rejectionReason\": \"Incomplete documentation\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/admin/reject/NGO_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "admin", "reject", "NGO_ID"]
+        }
+      }
+    },
+    {
+      "name": "NGO - Admin Statistics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/ngos/admin/statistics",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "ngos", "admin", "statistics"]
+        }
+      }
+    },
+    {
+      "name": "Campaign - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Emergency Medical Relief\",\n  \"description\": \"Help us provide urgent medical assistance to underprivileged patients\",\n  \"ngoId\": \"NGO_ID_HERE\",\n  \"targetAmount\": 500000,\n  \"category\": \"Medical\",\n  \"startDate\": \"2025-01-01\",\n  \"endDate\": \"2025-03-31\",\n  \"image\": \"https://example.com/image.jpg\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/campaigns/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "campaigns", "create"]
+        }
+      }
+    },
+    {
+      "name": "Campaign - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/campaigns/all?status=Active&category=Medical&page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "campaigns", "all"],
+          "query": [
+            {
+              "key": "status",
+              "value": "Active"
+            },
+            {
+              "key": "category",
+              "value": "Medical"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Campaign - Get By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/campaigns/CAMPAIGN_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "campaigns", "CAMPAIGN_ID"]
+        }
+      }
+    },
+    {
+      "name": "Campaign - Get by NGO ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/campaigns/ngo/NGO_ID?page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "campaigns", "ngo", "NGO_ID"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Campaign - Update",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"collectedAmount\": 250000,\n  \"status\": \"Active\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/campaigns/update/CAMPAIGN_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "campaigns", "update", "CAMPAIGN_ID"]
+        }
+      }
+    },
+    {
+      "name": "Campaign - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/campaigns/delete/CAMPAIGN_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "campaigns", "delete", "CAMPAIGN_ID"]
+        }
+      }
+    }
+  ]
+}

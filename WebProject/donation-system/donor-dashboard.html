@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CareHaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">CareHaven</h1>
+            <div class="nav-links">
+                <a href="donor-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="campaigns.html" class="nav-link">Causes</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>Welcome to Your CareHaven, <span id="userName"></span></h2>
+            <p>Track your compassionate journey and see the lives you're touching</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Impact</h3>
+                <p class="stat-number" id="totalDonations">$0</p>
+                <small>in donations</small>
+            </div>
+            <div class="stat-card">
+                <h3>Causes Supported</h3>
+                <p class="stat-number" id="campaignsCount">0</p>
+                <small>different campaigns</small>
+            </div>
+            <div class="stat-card">
+                <h3>Compassion Score</h3>
+                <p class="stat-number">98%</p>
+                <small>active supporter</small>
+            </div>
+            <div class="stat-card">
+                <h3>Lives Touched</h3>
+                <p class="stat-number">+150</p>
+                <small>through your generosity</small>
+            </div>
+        </div>
+
+        <div class="dashboard-actions">
+            <a href="campaigns.html" class="btn btn-primary btn-large">Explore Causes</a>
+            <button class="btn btn-secondary btn-large">My Saved Causes</button>
+        </div>
+
+        <div class="recent-activity">
+            <h3>Your Recent Compassion</h3>
+            <div id="donationsList" class="donations-list">
+                <!-- Donations will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/donor-dashboard.js"></script>
+</body>
+</html>
+

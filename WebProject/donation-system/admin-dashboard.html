@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CareHaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .admin-stats .stat-card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(30,58,47,0.08); text-align: center; }
+        .admin-stats .stat-card .value { font-size: 2rem; font-weight: 700; color: var(--deep-forest); }
+        .admin-stats .stat-card .label { color: #666; margin-top: 0.5rem; }
+        .ngo-card { display: flex; justify-content: space-between; gap: 1.5rem; background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(30,58,47,0.08); flex-wrap: wrap; }
+        .ngo-actions { display: flex; gap: 0.75rem; align-items: flex-start; }
+        .ngo-date { color: #888; font-size: 0.9rem; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">CareHaven Admin</h1>
+            <div class="nav-links">
+                <span class="nav-link">Hello, <strong id="adminName">Admin</strong></span>
+                <a href="campaigns.html" class="nav-link">View Campaigns</a>
+                <a href="#" class="nav-link" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>Platform Administration</h2>
+            <p>Review and approve NGO registrations</p>
+        </div>
+
+        <div class="admin-stats">
+            <div class="stat-card"><div class="value" id="statTotal">0</div><div class="label">Total NGOs</div></div>
+            <div class="stat-card"><div class="value" id="statApproved">0</div><div class="label">Approved</div></div>
+            <div class="stat-card"><div class="value" id="statPending">0</div><div class="label">Pending</div></div>
+            <div class="stat-card"><div class="value" id="statRejected">0</div><div class="label">Rejected</div></div>
+        </div>
+
+        <h3>Pending NGO Approvals</h3>
+        <div id="pendingList"></div>
+        <div id="message" class="message" role="alert" aria-live="polite"></div>
+    </div>
+
+    <footer class="footer"><p>&copy; <span id="year"></span> CareHaven</p></footer>
+
+    <script src="js/auth.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Causes - CareHaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/campaigns.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">CareHaven</h1>
+            <div class="nav-links">
+                <a href="login.html" id="loginLink" class="nav-link">Login</a>
+                <a href="#" id="dashboardLink" class="nav-link" style="display:none">Dashboard</a>
+                <a href="campaigns.html" class="nav-link">Causes</a>
+                <a href="#" id="logoutLink" class="nav-link" style="display:none" onclick="logout(); return false;">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>CareHaven Causes</h2>
+            <p>Discover meaningful campaigns that need your support today</p>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search CareHaven causes..." class="search-input">
+            <select id="categoryFilter" class="filter-select">
+                <option value="">All Categories</option>
+                <option value="Emergency">Emergency Relief</option>
+                <option value="Education">Education</option>
+                <option value="Medical">Healthcare</option>
+                <option value="Food">Food Aid</option>
+                <option value="Shelter">Shelter</option>
+                <option value="Environment">Environment</option>
+                <option value="Children">Children & Youth</option>
+            </select>
+            <select id="sortSelect" class="filter-select">
+                <option value="newest">Newest First</option>
+                <option value="mostFunded">Most Supported</option>
+                <option value="endingSoon">Urgent Needs</option>
+            </select>
+        </div>
+
+        <div id="campaignsContainer" class="campaigns-grid">
+            <!-- Campaigns will be loaded here -->
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/campaigns.js"></script>
+</body>
+</html>

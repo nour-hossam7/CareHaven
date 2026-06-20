@@ -1,0 +1,24 @@
+{
+  "name": "carehaven-backend",
+  "version": "1.0.0",
+  "description": "CareHaven Backend - Campaign and NGO Management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "check": "node --check server.js && node --check controllers/authController.js && node --check controllers/campaignController.js && node --check controllers/ngoController.js && node --check controllers/donationController.js && node --check controllers/reportController.js && node --check routes/authRoutes.js && node --check routes/campaignRoutes.js && node --check routes/ngoRoutes.js && node --check routes/donationRoutes.js && node --check routes/reportRoutes.js",
+    "test": "npm run check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.22.1",
+    "mongoose": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

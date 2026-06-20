@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CareHaven NGO Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ngo-dashboard.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+<aside class="sidebar">
+<div class="logo">CareHaven</div>
+
+<nav>
+<a class="active">Dashboard</a>
+<a href="create-campaign.html">Create Campaign</a>
+<a href="campaigns.html">Campaigns</a>
+<a href="upload-reports.html">Upload Reports</a>
+<a href="#" onclick="logout(); return false;">Logout</a>
+</nav>
+<div class="sidebar-footer">NGO: <strong id="ngoName">CareHaven NGO</strong></div>
+</aside>
+
+<main class="main">
+<div id="approvalBanner" hidden></div>
+
+<header class="topbar">
+<h1 id="welcomeHeading">Welcome to your CareHaven</h1>
+</header>
+
+<section class="stats">
+<div class="card small">
+<div class="label">Total Campaigns</div>
+<div class="value" id="totalCampaigns">0</div>
+</div>
+<div class="card small">
+<div class="label">Active Campaigns</div>
+<div class="value" id="activeCampaigns">0</div>
+</div>
+<div class="card small">
+<div class="label">Total Donations</div>
+<div class="value" id="totalDonations">$0</div>
+</div>
+<div class="card">
+<div class="label">Monthly Progress</div>
+<div class="progress-wrap">
+<div class="progress-bar" id="monthlyProgress" style="width:0%">0%</div>
+</div>
+</div>
+</section>
+
+<section class="recent" style="padding: 40px;">
+  <h2 style="font-family: Poppins; text-align: center; margin-bottom: 40px; font-size: 30px;">Recent Campaigns</h2>
+  <div id="campaignList" class="campaign-list"></div>
+</section>
+
+<footer class="footer">&copy; <span id="year"></span> CareHaven</footer>
+</main>
+</div>
+<script src="js/auth.js"></script>
+<script src="ngo-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campaign Details - CareHaven</title>
+
+<link rel="stylesheet" href="campaign-details.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <button class="back-button" onclick="window.location.href='ngo-dashboard.html'">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="back-icon">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="3"/>
+      <path d="M14 8l-4 4 4 4" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="logo">CareHaven</div>
+  <ul>
+    <li><a href="ngo-dashboard.html">Dashboard</a></li>
+    <li><a href="create-campaign.html">Create Campaign</a></li>
+    <li><a href="upload-reports.html">Reports</a></li>
+    <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+  </ul>
+</nav>
+
+<div id="approvalBanner" hidden></div>
+<div id="message" class="message" role="alert" aria-live="polite" style="margin: 1rem 2rem;"></div>
+
+<section class="details-section">
+    <div class="top-info">
+        <h1 style="color: #4F7A5B;">Your Campaign</h1>
+        <h1 id="campaignTitle">Loading...</h1>
+        <p id="campaignSubtitle" class="subtitle"></p>
+    </div>
+
+    <div class="media-box">
+       <img id="campaignImage" src="images/img1.jpg" alt="Campaign impact image">
+    </div>
+
+    <div class="stats-box">
+        <div class="left">
+            <h3>Raised Amount</h3>
+            <p class="big" id="raisedAmount">$0</p>
+
+            <h3>Goal</h3>
+            <p class="big" id="targetAmount">$0</p>
+
+            <div class="progress-bar">
+                <div id="progressFill" style="width: 0%;"></div>
+            </div>
+            <p class="percent" id="progressText">0% funded</p>
+
+            <button class="upload-btn" onclick="window.location.href='upload-reports.html'">Upload Report</button>
+        </div>
+
+        <div class="right">
+            <h2>Campaign Description</h2>
+            <p id="campaignDescription"></p>
+
+            <h2>Status</h2>
+            <p id="donorEngagement"></p>
+
+            <h2>Uploaded Reports</h2>
+            <div id="reportsList"></div>
+        </div>
+    </div>
+</section>
+
+<script src="js/auth.js"></script>
+<script src="campaign-details.js"></script>
+</body>
+</html>
